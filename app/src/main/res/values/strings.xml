@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Mobile Information Gain</string>
+    <string name="accessibility_service_description">Mobile Information Gain</string>
+
+    <string name="welcome_card_title">Willkommen!</string>
+    <string name="welcome_card_description">Vielen Dank für Ihre Teilnahme an meiner Studie.
+        Die folgenden Karten sollen Sie durch den Prozess des Aufsetzens der App führen.
+        Klicken Sie auf den Button mit der Beschriftung \'OKAY\' um diese Nachricht zu verwerfen.</string>
+    <string name="welcome_card_button">Okay</string>
+
+    <string name="uuid_card_title">Ihr Pseudonym</string>
+
+    <string name="optimizer_card_title">Batterieoptimierungen ausschalten</string>
+    <string name="optimizer_card_description">Damit die App nicht vorzeitig beendet wird, sollte
+        für die Dauer der Studie die Batterieptimierungen von Android für diese App
+        ausgeschaltet werden. Dies wirkt sich dennoch kaum auf die Akkuleistung aus.</string>
+    <string name="optimizer_card_description_running">Die App wurde als Ausnahme hinzugefügt, Sie müssen keine weiteren Schritte unternehmen.</string>
+    <string name="optimizer_card_button">App als Ausnahme hinzufügen</string>
+
+    <string name="startservice_card_title">Bedienungshilfen einschalten</string>
+    <string name="startservice_card_title_turnoff">Bedienungshilfen ausschalten</string>
+    <string name="startservice_data_card_title_collection_finished">Datenerhebhung abgeschlossen</string>
+    <string name="startservice_card_description">Diese App basiert auf den \"Bedienungshilfen\"
+        von Android. Dies ermöglicht es, die sichtbaren Informationen auszuwerten. Bitte schalten Sie
+        daher in den Einstellungen die App Mobile Information Gain ein. </string>
+    <string name="startservice_card_description_running">Der Service für die Bedienungshilfen ist aktiv, Sie müssen keine weiteren Schritte unternehmen.</string>
+    <string name="startservice_card_description_finished">Alle benötigten Daten wurden gesammelt.
+        Die Android Bedienungshilfen werden nicht mehr benötigt und sollten daher vor dem
+        Exportieren wieder abgeschaltet werden.</string>
+    <string name="startservice_data_card_description_final">Alle benötigten Daten wurden gesammelt.
+    Sie können nun die Daten exportieren, indem Sie auf die nächste Karte schauen.</string>
+    <string name="startservice_card_button">Einstellungen</string>
+
+    <string name="export_card_title">Daten exportieren</string>
+    <string name="export_card_description">Sobald die Datenerhebung abgeschlossen ist, können Sie
+        die Daten exportieren lassen. Es werden keinerlei persönlichen Inhalte exportiert.
+        Sie werden benachrichtigt sobald der Datenexport verfügbar ist.</string>
+    <string name="export_card_description_ready">Sie können Ihre Daten jetzt exportieren. Dieser
+        Vorgang kann sehr lange dauern. Bitte stellen Sie daher sicher, dass der Akku des Telefons
+        voll geladen ist oder am Stromnetz angeschlossen ist.</string>
+    <string name="export_card_description_running">Die Daten werden gerade exportiert.
+        Bitte stellen Sie sicher, dass das Smartphone ausreichend mit Strom versorgt wird.
+        Dieser Prozess kann unter Umständen mehrere Stunden in Anspruch nehmen.</string>
+
+    <string name="export_card_description_finished">Der Export der Daten ist abgeschlossen.
+    Vielen Dank für Ihre Geduld und Teilnahme an meiner Studie. Mit dem unten stehenden Button
+        können Sie mir die Daten senden.</string>
+
+    <string name="export_card_button">Export starten</string>
+    <string name="export_card_button_send">Senden</string>
+
+
+    <string name="not_inquiry_finished">Studie: Erhebung abgeschlossen</string>
+    <string name="not_desc_further_steps">Bitte klicken Sie diese Benachrichtigung um
+        weitere Informationen für den Datenexport zu erhalten.</string>
+
+    <string name="not_export_title_1">Studie: Exportiere 1/2</string>
+    <string name="not_export_title_2">Studie: Exportiere 2/2</string>
+    <string name="not_export_title_finished">Studie: Export abgeschlossen</string>
+    <string name="not_export_desc_finished">Hier klicken um die erhobenen Daten
+        zu verschicken.</string>
+
+    <string name="not_export_failed_title">Export fehlgeschlagen</string>
+    <string name="not_export_failed_desc">Bitte erneut versuchen.</string>
+
+    <string name="snack_export_started">Export gestartet.</string>
+
+    <string name="app_crash_not_title">Studie - Fehler</string>
+    <string name="app_crash_not_desc">Die App wurde unerwartet beendet, bitte kontaktieren Sie mich.</string>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/accessibility_service_description"
+    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityFlags="flagRequestTouchExplorationMode|flagReportViewIds|flagRetrieveInteractiveWindows|flagIncludeNotImportantViews"
+    android:accessibilityFeedbackType="feedbackHaptic"
+    android:notificationTimeout="200"
+    android:canRetrieveWindowContent="true"
+/>
+
+<!-- Accessibility-Flags:
+    FLAG_INCLUDE_NOT_IMPORTANT_VIEWS - to read views which was marked as not important for accessibility
+    FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY - to read web-content
+    FLAG_REPORT_VIEW_IDS - read developers view id's (may be interesting for already visited views)
+    FLAG_RETRIEVE_INTERACTIVE_WINDOWS - needed to read window content like views, text etc.
+-->
+
+<!-- accessibilityFeedbackType: "The feedback types this serivce provides as specified in AccessibilityServiceInfo."
+    -> none in this case. "if two or more services provide the same feedback type, then only the first registered service receives the event",
+    https://developer.android.com/guide/topics/ui/accessibility/services.html#register
+
+    therefore a mostly unused feedback type is specified -->
+
+<!-- notificationTimeout: impact unclear. Maybe set to 0 or like 10 .. -->
