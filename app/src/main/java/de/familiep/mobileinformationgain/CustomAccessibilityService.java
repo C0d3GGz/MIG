@@ -39,7 +39,7 @@ public class CustomAccessibilityService extends AccessibilityService implements 
 
         PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
-        queue = new InformationQueue(wakeLock, this);
+        queue = new InformationQueue(wakeLock, getApplicationContext());
 
         SharedprefsHelper sharedprefsHelper = new SharedprefsHelper(this);
         if(sharedprefsHelper.getDataCollectionFinishedMillis() == 0L){
@@ -143,7 +143,10 @@ public class CustomAccessibilityService extends AccessibilityService implements 
     @Override
     public boolean onUnbind(Intent intent) {
         unregisterReceiver(screenOnReceiver);
-        queue.put(new InformationData(null, 0, System.currentTimeMillis(), null, true));
+
+        if(isScreenOn)
+            queue.put(new InformationData(null, 0, System.currentTimeMillis(), null, true));
+
         stopSelf();
         return super.onUnbind(intent);
     }
@@ -155,7 +158,10 @@ public class CustomAccessibilityService extends AccessibilityService implements 
 
     @Override
     public void onScreenOff() {
-        queue.put(new InformationData(null, 0, System.currentTimeMillis(), null, true));
+
+        if(isScreenOn)
+            queue.put(new InformationData(null, 0, System.currentTimeMillis(), null, true));
+
         isScreenOn = false;
     }
 

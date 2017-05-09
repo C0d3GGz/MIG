@@ -30,6 +30,11 @@ public class DbAccessHelper {
         ContentValues values = new ContentValues();
         values.put(EventSeries.COL_NAME_ENDING_TIMESTAMP, endingTimestamp);
         String where = EventSeries._ID + " == " + eventSeriesId;
+
+        if(!db.isOpen()){
+            db = dbInitializer.getWritableDatabase();
+        }
+
         db.update(EventSeries.TABLE_NAME, values, where, null);
         db.close();
     }
