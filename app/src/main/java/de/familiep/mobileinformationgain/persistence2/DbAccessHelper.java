@@ -31,10 +31,7 @@ public class DbAccessHelper {
         values.put(EventSeries.COL_NAME_ENDING_TIMESTAMP, endingTimestamp);
         String where = EventSeries._ID + " == " + eventSeriesId;
 
-        if(!db.isOpen()){
-            db = dbInitializer.getWritableDatabase();
-        }
-
+        reopenDbIfNeeded();
         db.update(EventSeries.TABLE_NAME, values, where, null);
         db.close();
     }
@@ -44,6 +41,8 @@ public class DbAccessHelper {
         values.put(Events.COL_NAME_TIMESTAMP, timestamp);
         values.put(Events.COL_NAME_PACKAGENAME, packageName);
         values.put(Events.COL_NAME_EVENTSERIES_ID, eventSeriesId);
+
+        reopenDbIfNeeded();
         return db.insert(Events.TABLE_NAME, null, values);
     }
 
@@ -52,6 +51,7 @@ public class DbAccessHelper {
         String[] select = {Events.COL_NAME_PACKAGENAME};
         String where = Events._ID + " == " + eventId;
 
+        reopenDbIfNeeded();
         Cursor cursor = db.query(Events.TABLE_NAME, select, where, null, null, null, null);
 
         String currentPackagenames = null;
@@ -78,6 +78,7 @@ public class DbAccessHelper {
     }
 
     public void insertBulkEventContent(List<EventContent> eventContentList, long eventId){
+        reopenDbIfNeeded();
         db.beginTransaction();
         try{
             for(EventContent eventContent : eventContentList){
@@ -118,6 +119,13 @@ public class DbAccessHelper {
         values.put(EventContents.COL_NAME_TEXTCONTENT, content);
         values.put(EventContents.COL_NAME_EVENT_ID, currentEventId);
 
+        reopenDbIfNeeded();
         db.insert(EventContents.TABLE_NAME, null, values);
+    }
+
+    private void reopenDbIfNeeded(){
+        if(!db.isOpen()){
+            db = dbInitializer.getWritableDatabase();
+        }
     }
 }
