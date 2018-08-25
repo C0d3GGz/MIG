@@ -1,4 +1,4 @@
-This paper contributes the source code we used in a project for studying mobile information supply. See our paper for more details: 
+This repository contributes the source code we used in a project for studying mobile information supply. See our paper for more details: 
 
 Petersen, David; Böhmer, Matthias: Understanding Mobile Information Supply: Studying the Amount of Textual Information Smartphones Provide. Proceedings of NordiCHI 2018, ACM.
 
